@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
 
-		Gamer gamer1 = new Gamer(1,"Rumeysa","Tan","19653278965",1996);
+		Gamer gamer1 = new Gamer(1,"Rumeysa","Tan","12348697561",1996);
 		Gamer gamer2 = new Gamer(2,"Ruken","Ay","19653278966",1993);
 		Gamer gamer3 = new Gamer(3,"Merve","Yıldız","19653278967",2000);
 		
