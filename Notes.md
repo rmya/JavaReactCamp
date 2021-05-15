@@ -132,9 +132,20 @@ if(e instanceof Manager){
 * instanceof operatörü, solundaki tipin alt tipinden olan tüm referanslar için true döndürür. Dolayısıyla birden fazla instanceof, ör: if-else yapısıyla kıyaslaması varsa en özel tipten en genel tipe doğru gitmek gerekir aksi taktirde kendisinden üretildiği sınıfı bulamayabilir.
 
 ### RunTime Type Identification(RTTI)
-instanceod operatörü ile referansların gösterdiği nesnelerin gerçek tiplerini belirlemeye RunTime Type Identification(RTTI) denir. ----> KAÇÇ
+instanceod operatörü ile referansların gösterdiği nesnelerin gerçek tiplerini belirlemeye RunTime Type Identification(RTTI) denir. ----> RUN !
 
+### Abstract Class
+Nesnesi oluşturulmayan sınıflara denir. abstract anahtar kelimesi kullanarak yazılır. Soyut sınıfların nesnesi oluşturulamadığı için sadece kavramsal olarak ve hiyerarşinin en tepesinde, alt sınıfları için bir kalıp oluşturmak üzere vardırlar. 
 
+* Soyut bir sınıfın metodu, o sınıfın tüm alt aınıflaarı tarafından override ediliyorsa bu durumda o metot sadece arayüz sağlıyor, gerçekleştirme sağlamıyor demektir. Çünkü sınıf soyut olduğundan o sınıfın hiç bir nesnesş oluşturulmuyor doyasıyla da metodun bu sınıftaki gerçekleştirmesi hiçbir şekilde çağrılmıyor demektir. Tüm alt sınıflar tarafından override edilen böyle metodlar aslen bir kalıp yada şablon olarak rol alırlar yani sadece arayüz sağlarlar.
+
+### Abstract method
+* Arayüzü olan ama gerçekleştirmesi olmayan metoda soyut metod denir. abstract ile nitelenir. Tanımında {} kulllanılmadan sadece arayüz olarak ifade edilir ve ; ile sonlanır.
+Soyut metotlar ancak soyut sınıflarda bulunur. 
+
+### Data Access Objects(DAO)
+
+* Uygulmanızda iş soyutlamalarını temsil eden sınıfların nesnelerinin (entity) veri tabanında kalıcı olmaları gerekir. Bu amaçla Data Access Objects(DAO) kalıbından Dfaydalanılır. Her entity için bir DAO sınıfı oluşturulur. Her entity için oluşturulan Dao sınıfı, o entityin veri tabanıyla olan ilişkisini yani hayat döngüsünü(life cycle) yönetir.  Dolayısıyla Dao sınıflarında save(), retrieve() vb. crud metodları olur. Abstract Dao olarak bir sınıf oluşturulur. Bu sınıfı EmployeDao, ProductDao gibi sınıflar AbstractDao sınıfını override ederler.
 
 
 ## Lombok
