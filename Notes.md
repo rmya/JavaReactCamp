@@ -147,6 +147,15 @@ Soyut metotlar ancak soyut sınıflarda bulunur.
 
 * Uygulmanızda iş soyutlamalarını temsil eden sınıfların nesnelerinin (entity) veri tabanında kalıcı olmaları gerekir. Bu amaçla Data Access Objects(DAO) kalıbından Dfaydalanılır. Her entity için bir DAO sınıfı oluşturulur. Her entity için oluşturulan Dao sınıfı, o entityin veri tabanıyla olan ilişkisini yani hayat döngüsünü(life cycle) yönetir.  Dolayısıyla Dao sınıflarında save(), retrieve() vb. crud metodları olur. Abstract Dao olarak bir sınıf oluşturulur. Bu sınıfı EmployeDao, ProductDao gibi sınıflar AbstractDao sınıfını override ederler.
 
+### Interface
+Tüm metodları soyut olan sınıftır.
+Aşağıdaki tanımlar birbirine eşittir.
+```
+pubic interface Worker{                               ==          public interface Worker{
+  public abstract void work();                                      void work();
+}                                                                 }
+```
+Interface kendisinden miras alınacak yapılardır. Bir sınıf arayüzün alt tipi olarak miras devralırken implements anahtar kelimesini kulllanır.
 
 ## Lombok
 * Kullanılan metodları bir satırlık notasyona indirgemeyi amaç edinmiş kütüphanedir. Maven projesinde pom.xml dosyamızda aşağıdaki şekilde gözükür.
