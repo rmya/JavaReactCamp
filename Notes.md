@@ -149,6 +149,7 @@ Soyut metotlar ancak soyut sınıflarda bulunur.
 
 ### Interface
 Tüm metodları soyut olan sınıftır.
+is-a hiyerarşisi
 Aşağıdaki tanımlar birbirine eşittir.
 ```
 pubic interface Worker{                               ==          public interface Worker{
@@ -156,6 +157,17 @@ pubic interface Worker{                               ==          public interfa
 }                                                                 }
 ```
 Interface kendisinden miras alınacak yapılardır. Bir sınıf arayüzün alt tipi olarak miras devralırken implements anahtar kelimesini kulllanır.
+Tanımladıkları soyut davranışlar ile alt sınıflarına yetkinlik(ability) kazandırırlar. Nesneler, sınıflarının yerine getirdikleri arayüzler ile pek çok yetkinlik kazanır.
+
+#### java.lang.Comparable arayüzü nesneleri sıralamakta kullanılır. Nesneleri sıralancak olan sınıflar bu arayüzü üst tipi olarak kabul edip üzerindeki tek metod olan compereTo() metoduna gerçekleştirme sağlar. Comparable arayüzünün APIsine bağlanarak detaylı bilgi alınabilir.
+```
+public public interface Comparable<T>{
+  public int compareTo(T o);
+}
+```
+* Bir sınıf aynı anda birden fazla arayüz gerçekleştirebilir. Sınıf tanımlanırken implements anahtar kelimesinden sonra arayüzler virgül ile listelenir. Aynı zamanda extends ise mşras alabilr.
+
+
 
 ## Lombok
 * Kullanılan metodları bir satırlık notasyona indirgemeyi amaç edinmiş kütüphanedir. Maven projesinde pom.xml dosyamızda aşağıdaki şekilde gözükür.
